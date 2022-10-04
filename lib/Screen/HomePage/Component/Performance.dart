@@ -27,7 +27,7 @@ class _PerformaceState extends State<Performace> {
               GestureDetector(
                 onTap: () => getPerformanceData(),
                 child: Text(
-                  'Performace',
+                  'Performance',
                   style: GoogleFonts.poppins(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
