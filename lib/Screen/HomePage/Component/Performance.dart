@@ -47,7 +47,7 @@ class _PerformaceState extends State<Performace> {
                       return Center(child: CircularProgressIndicator());
                     }
                     List<PerformanceModel> performanceData = snapshot.data;
-                    print(performanceData.length);
+                    //print(performanceData.length);
                     return ListView.builder(
                       itemCount: performanceData.length,
                       itemBuilder: (context, index) {
@@ -68,9 +68,12 @@ class _PerformaceState extends State<Performace> {
                                 child: LinearProgressIndicator(
                                   minHeight: 20,
                                   backgroundColor: HexColor("#f1f1f1"),
-                                  value: changePercent! / 100,
+                                  value: changePercent!.abs() / 100,
                                   valueColor: AlwaysStoppedAnimation<Color>(
-                                      HexColor("#277f00")),
+                                    changePercent! > 0
+                                        ? HexColor("#277f00")
+                                        : HexColor("#ed120a"),
+                                  ),
                                 ),
                               ),
                               Expanded(
